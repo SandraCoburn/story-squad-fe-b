@@ -5,21 +5,21 @@ import ProfileRenderModal from '../components/pages/Modal/ProfileRenderModal'
 import { useOktaAuth } from '@okta/okta-react';
 
 afterEach(() => {
-  cleanup();
+    cleanup();
 });
 jest.mock('@okta/okta-react', () => ({
-  useOktaAuth: () => {
-    return {
-      authState: {
-        isAuthenticated: true,
-      },
-      authService: {},
-    };
-  },
+    useOktaAuth: () => {
+        return {
+            authState: {
+                isAuthenticated: true,
+            },
+            authService: {},
+        };
+    },
 }));
 
 
-describe('<ProfileRenderModal /> test suite', () => {
+describe('<ProfileRenderModall /> test suite', () => {
     test('Tell us who you are - Displaying', () => {
         render(
             <Router>
@@ -28,5 +28,5 @@ describe('<ProfileRenderModal /> test suite', () => {
         );
         expect(screen.getByText(/So we can direct you to the right place, please let us know who you are/i)).toBeInTheDocument();
     })
-} )
+})
 
