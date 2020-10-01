@@ -7,7 +7,6 @@ import { Button } from 'antd';
 import { ArrowLeftOutlined, ArrowRightOutlined } from '@ant-design/icons';
 import { SizeMe } from 'react-sizeme';
 
-
 const RenderStoryViewer = props => {
   const [numPages, setNumPages] = useState(null);
   const [pageNumber, setPageNumber] = useState(1);
@@ -102,6 +101,14 @@ const RenderStoryViewer = props => {
           onClick={nextPage}
         >
           {<ArrowRightOutlined />}
+        </Button>
+        <Button
+          className="finished-reading"
+          type="button"
+          disabled={pageNumber < numPages}
+          onClick=""
+        >
+          Finished Reading?
         </Button>
       </div>
     </>
